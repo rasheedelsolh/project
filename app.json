@@ -1,0 +1,17 @@
+{
+  "name": "pdf_online_editor",
+  "description": "Build LangChain Web Chat using Streamlit ",
+  "repository": "",
+  "keywords": ["python", "Streamlit"],
+  "buildpacks": [
+    {
+      "url": ""
+    },
+    {
+      "url": ""
+    },
+    {
+      "url": ""
+    }
+  ]
+}
