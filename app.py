@@ -4,13 +4,14 @@ from PyPDF2 import PdfReader
 import re
 from supabase import create_client, Client
 from io import BytesIO
+import os
 
 # 🛠️ Poppler path (edit if installed elsewhere)
 POPPLER_PATH = r"C:\poppler\Library\bin"
 
 # 🎯 Supabase config from secrets
-SUPABASE_URL = st.secrets["SUPABASE_URL"]
-SUPABASE_KEY = st.secrets["SUPABASE_KEY"]
+SUPABASE_URL = os.getenv("SUPABASE_URL")
+SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 BUCKET_NAME = "documents"
 
 # 🔗 Supabase client
