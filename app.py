@@ -77,7 +77,7 @@ def main():
         selected_page -= 1
 
         # Display image
-        images = convert_from_bytes(pdf_file.getvalue())
+        images = convert_from_bytes(pdf_file.getvalue(), fmt="png")
         image = images[selected_page]
 
         col1, col2 = st.columns(2)

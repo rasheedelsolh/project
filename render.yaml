@@ -1,12 +1,13 @@
 services:
-  # A Docker web service
   - type: web
-    name: pdf_online_editorn
-    runtime: python
+    name: pdf-editor
+    env: python
     plan: free
-    autoDeploy: false
-    buildCommand: pip install -r requirements.txt
-    startCommand: sh setup.sh && streamlit run app.py --server.port ${PORT:-5000}
-    envVars:
-    - key: PYTHON_VERSION
-      value: 3.10.12
+    buildCommand: |
+      apt-get update && apt-get install -y poppler-utils
+      pip install -r requirements.txt
+    startCommand: streamlit run app.py
+    disk:
+      name: data
+      mountPath: /mnt/data
+      sizeGB: 1
