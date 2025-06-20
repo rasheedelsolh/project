@@ -2,3 +2,4 @@ streamlit>=1.24.1
 pdf2image
 PyPDF2
 Pillow
+supabase
