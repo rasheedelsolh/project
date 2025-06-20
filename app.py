@@ -6,8 +6,6 @@ from supabase import create_client, Client
 from io import BytesIO
 import os
 
-# 🛠️ Poppler path (edit if installed elsewhere)
-POPPLER_PATH = r"C:\poppler\Library\bin"
 
 # 🎯 Supabase config from secrets
 SUPABASE_URL = os.getenv("SUPABASE_URL")
@@ -90,7 +88,7 @@ def main():
 
             # Reset stream for image preview
             pdf_data.seek(0)
-            images = convert_from_bytes(pdf_data.read(), first_page=selected_page + 1, last_page=selected_page + 1, poppler_path=POPPLER_PATH)
+            images = convert_from_bytes(pdf_data.read(), first_page=selected_page + 1, last_page=selected_page + 1)
             preview_image = images[0]
 
             col1, col2 = st.columns(2)
